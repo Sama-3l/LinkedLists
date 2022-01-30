@@ -52,7 +52,10 @@ class DeleteAtPos{
         }while(p != 0);
         Node delete = new Node();
         obj= head;
-        delete.delete_at_pos(obj, 3);
+        int n;
+        System.out.println("Enter position to be cleared");
+        n = sc.nextInt();
+        delete.delete_at_pos(obj, n);
         while(obj != null){
             if(obj.objf != null){
                 System.out.print(obj.a + " --> ");
