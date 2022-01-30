@@ -51,5 +51,6 @@ class SingleLinkedList{
                 System.out.println("");
             }
         }
+        sc.close();
     }
 }

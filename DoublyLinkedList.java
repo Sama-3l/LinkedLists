@@ -60,5 +60,6 @@ class Doob {
             }
             obj = obj.objb;
         }
+        sc.close();
     }
 }

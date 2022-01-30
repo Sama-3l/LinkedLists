@@ -77,5 +77,6 @@ class InsertAtEnd{
             }
             obj = obj.objb;
         }
+        sc.close();
     }
 }

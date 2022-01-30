@@ -70,5 +70,6 @@ class DeleteLastNode{
             }
             obj = obj.objb;
         }
+        sc.close();
     }
 }

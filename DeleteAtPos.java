@@ -72,5 +72,6 @@ class DeleteAtPos{
             }
             obj = obj.objb;
         }
+        sc.close();
     }
 }

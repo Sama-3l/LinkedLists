@@ -66,5 +66,6 @@ class DeleteInsertion{
             }
             obj = obj.objb;
         }
+        sc.close();
     }
 }
