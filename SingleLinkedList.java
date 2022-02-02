@@ -15,31 +15,27 @@ class Node{
 }
 
 
-class SingleLinkedList{
+class SingledLinkedList{
+    static Node obj = new Node();
+    static Node doit(int data, Node obj1){
+        obj.setUp(obj1, data);
+        return obj1;
+    }
 
     public static void main(String args[]){
-        Node obj = new Node();
         Node head = obj;
         Scanner sc = new Scanner(System.in);
         int p = 1, b;
-        System.out.println(obj);
         System.out.println("No shit sherlock");
         while(p != 0){
             Node obj1 = new Node();
             System.out.println("Enter number: ");
             b = sc.nextInt();
+            obj = doit(b, obj1);
             System.out.println("More numbers? If not enter 0");
             p = sc.nextInt();
-            if(p == 0){
-                obj1 = obj.setUp(obj1, b);
-                obj = obj1;
-                obj1 = obj.setUp(null, b);
-            }
-            else{
-                obj1 = obj.setUp(obj1, b);
-                obj = obj1;
-            }
         }
+        obj.objj = null;
         obj = head;
         System.out.println("");
         while(obj.objj != null){
