@@ -6,6 +6,7 @@ struct L{
     struct L *next;
 };
 
+//Print Linked List
 void print(struct L *head){
     while(head != NULL){
         printf("%d\n", head->x);
@@ -13,6 +14,8 @@ void print(struct L *head){
     }
 }
 
+
+//Insert at end 
 void insend(struct L *head){
     struct L *input = (struct L *)malloc(sizeof(struct L));
     scanf("%d", &input->x);
@@ -23,6 +26,7 @@ void insend(struct L *head){
     head->next = input;
 }
 
+//Insert at start
 struct L * instart(struct L *head){
     struct L *input = (struct L *)malloc(sizeof(struct L));
     scanf("%d", &input->x);
@@ -30,6 +34,7 @@ struct L * instart(struct L *head){
     return input;
 }
 
+//Insert at position
 void inspos(struct L *head, int n){
     int i = 1;
     while(i != n+1){
@@ -42,6 +47,7 @@ void inspos(struct L *head, int n){
     head->next = input;
 }
 
+//Delete from position
 void del(struct L *head, int n){
     int i = 1;
     while(i != n+1){
@@ -51,7 +57,8 @@ void del(struct L *head, int n){
     head->next = head->next->next;
 }
 
-struct L * lasttofront(struct L *head){         //Last element becomes first and vice versa
+//Shift last element to front and vice versa
+struct L * lasttofront(struct L *head){     
     struct L *h = head, *h1;
     while(head->next->next != NULL){
         head = head->next;
@@ -65,6 +72,7 @@ struct L * lasttofront(struct L *head){         //Last element becomes first and
     return h1;
 }
 
+//Find the middle element of linked list
 void middle(struct L *head){
     int i = 1, p = 0;
     struct L *h = head;
@@ -79,6 +87,7 @@ void middle(struct L *head){
     printf("Middle element:- %d\n", h->x);
 }
 
+//Pair wise exchange 
 void pair_wise(struct L *head){
     struct L *temp = head;
     int x;
@@ -90,6 +99,7 @@ void pair_wise(struct L *head){
     }
 }
 
+//Address of element
 void head_add(struct L *head){
     int n,i;
     struct L *ptr = head, *x;
@@ -129,14 +139,14 @@ void main(){
     printf("Enter choice: ");
     scanf("%d", &n);
     switch(n){
-        case 1: print(head); break;
-        case 2: insend(head); 
+        case 1: print(head); break;     //Print Linked List
+        case 2: insend(head);           //Insert at end
                 print(head); 
                 break;
-        case 3: head = instart(head);
+        case 3: head = instart(head);       //Insert at start
                 print(head);
                 break;
-        case 4: printf("Enter element position, starting from 1");
+        case 4: printf("Enter element position, starting from 1");      //Insert element before position
                 scanf("%d", &n);
                 if(n-1 > 0)
                     inspos(head, n-1);
@@ -144,7 +154,7 @@ void main(){
                     printf("Error. Exiting..\n");
                 print(head);
                 break;
-        case 5: printf("Enter element position, starting from 1");
+        case 5: printf("Enter element position, starting from 1");      //Insert element after position
                 scanf("%d", &n);
                 if(n-2 >= 0)
                     inspos(head, n-2);
@@ -152,7 +162,7 @@ void main(){
                     printf("Error. Exiting..\n");
                 print(head);
                 break;
-        case 6: printf("Enter element position, starting from 1");
+        case 6: printf("Enter element position, starting from 1");      //Insert  element before position
                 scanf("%d", &n);
                 if(n-2 >= 0)
                     del(head, n-2);
@@ -160,12 +170,12 @@ void main(){
                     printf("Error. Exiting..\n");
                 print(head);
                 break;
-        case 7: head = lasttofront(head);
+        case 7: head = lasttofront(head);               //Last to front shift
                 print(head); break;
 
-        case 8: pair_wise(head); print(head); break;
+        case 8: pair_wise(head); print(head); break;        //Pair wise exchange elements
 
-        case 9: middle(head); break;
-        case 10: head_add(head); break; 
+        case 9: middle(head); break;            //Middle of linked list
+        case 10: head_add(head); break;         //Address of element
     }       
 }
